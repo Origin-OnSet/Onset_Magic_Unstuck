@@ -14,7 +14,8 @@ AddEvent("OnPlayerEnterWater", function()
     end
 
     if terrain_height >= 100 then
-    	CallRemoteEvent("UnstuckPlayer", terrain_height)
+        local plyactor = GetPlayerActor(GetPlayerId())
+        plyactor:SetActorLocation(FVector(x,y, terrain_height + 100))
     end
 
 end)
